@@ -4,10 +4,13 @@
 <div *ngFor="let product of products">
   <!--A tag a transforma o item em link para os detalhes do mesmo.
   [ ]sintaxe de vinculação de propriedade.
+  O routerLink direciona para a rota.
   -->
-
   <h3>
-    <a [title]="product.name + ' details'">
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
       <!--declaração é um exemplo da sintaxe de interpolação do Angular. A interpolação {{ }} permite renderizar o valor da propriedade como texto.-->
       {{ product.name }}
     </a>
@@ -24,13 +27,9 @@
   </button>
 
   <!--Aciona o botão de notificação no Phone XL, pois possui preço acima de 700-->
-  <app-product-alerts 
-  [product]="product" 
-  (notify)="onNotify()">
+  <app-product-alerts [product]="product" (notify)="onNotify()">
   </app-product-alerts>
-
 </div>
-
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
