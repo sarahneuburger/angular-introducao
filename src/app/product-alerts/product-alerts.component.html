@@ -1,0 +1,5 @@
+<p *ngIf="product && product.price > 700">
+
+  <!--Vinculando o output criado no ts-->
+  <button (click)="notify.emit()">Notify Me</button>
+</p>

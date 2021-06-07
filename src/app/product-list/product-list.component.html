@@ -1,0 +1,39 @@
+<h2>Products</h2>
+
+<!--ngFor é um for each para apresentar os dados constantes na tabela products.-->
+<div *ngFor="let product of products">
+  <!--A tag a transforma o item em link para os detalhes do mesmo.
+  [ ]sintaxe de vinculação de propriedade.
+  -->
+
+  <h3>
+    <a [title]="product.name + ' details'">
+      <!--declaração é um exemplo da sintaxe de interpolação do Angular. A interpolação {{ }} permite renderizar o valor da propriedade como texto.-->
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <!--Só cria o elemento se o produto tiver um descrição.-->
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+  <!--Botão para compartilhar os produtos-->
+  <button (click)="share()">
+    Share
+  </button>
+
+  <!--Aciona o botão de notificação no Phone XL, pois possui preço acima de 700-->
+  <app-product-alerts 
+  [product]="product" 
+  (notify)="onNotify()">
+  </app-product-alerts>
+
+</div>
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
