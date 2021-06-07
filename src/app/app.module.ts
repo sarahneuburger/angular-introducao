@@ -12,6 +12,7 @@ import { CartService } from './cart.service';
 import { CartComponent } from './cart/cart.component';
 // Registra os provedores de que seu aplicativo precisa para usar o HttpClientserviço em todo o aplicativo
 import { HttpClientModule } from '@angular/common/http';
+import { ShippingComponent } from './shipping/shipping.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProductListComponent,
     ProductAlertsComponent,
     ProductDetailsComponent,
-    CartComponent
+    CartComponent,
+    ShippingComponent
   ],
   bootstrap: [AppComponent],
   providers: [CartService]
