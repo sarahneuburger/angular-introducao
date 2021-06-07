@@ -1,3 +1,9 @@
-<p>
-product-details works!
-</p>
+<h2>Product Details</h2>
+
+<!--Exibe os dados do produto através do if-->
+<div *ngIf="product">
+  <h3> {{ product.name }} </h3>
+  <!--Transforma dados para html, neste caso de string para valor monetário -->
+  <h4> {{ product.price | currency }} </h4>
+  <p> {{ product.description }} </p>
+</div>

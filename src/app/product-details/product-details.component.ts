@@ -18,6 +18,7 @@ export class ProductDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
   ngOnInit() {
     // Primeiro pega o id através da rota vigente
+    // snapshot - contém infos da rota ativa naquele momento
     const routeParams = this.route.snapshot.paramMap;
     const productIdFromRoute = Number(routeParams.get('productId'));
 
