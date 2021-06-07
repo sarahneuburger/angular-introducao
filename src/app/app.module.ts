@@ -22,10 +22,12 @@ import { ShippingComponent } from './shipping/shipping.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
-      // Adicionado caminho para buscaar itens por id
+      // Adicionando caminho para buscaar itens por id
       { path: 'products/:productId', component: ProductDetailsComponent },
-      // Adicionado caminho para o carrinho
-      { path: 'cart', component: CartComponent }
+      // Adicionando caminho para o carrinho
+      { path: 'cart', component: CartComponent },
+      // Adicionando rota para o shipping (arquivo json onde estão os dados que queremos pegar)
+      { path: 'shipping', component: ShippingComponent }
     ])
   ],
   declarations: [
